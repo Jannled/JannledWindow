@@ -33,6 +33,8 @@ public class Textfield extends JTextField
 	 */
 	public Textfield(String hint)
 	{
+		setForeground(colorUnactive);
+		setText(hint);
 		watchSearchHint(hint);
 	}
 	
