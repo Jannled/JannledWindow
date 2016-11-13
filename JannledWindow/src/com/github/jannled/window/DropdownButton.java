@@ -117,7 +117,7 @@ public class DropdownButton extends JPanel implements MouseListener
 	
 	private static final BufferedImage loadImage()
 	{
-		BufferedImage img;
+		BufferedImage img = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB);
 		try
 		{
 			Print.m(new File(DropdownButton.class.getResource("/assets/triangle.png").toURI()).getAbsolutePath());
