@@ -8,21 +8,17 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-import com.github.jannled.lib.Print;
-
 public class DropdownButton extends JPanel implements MouseListener
 {
 	private static final long serialVersionUID = 3240565806751089781L;
 	
-	private static final BufferedImage image = loadImage();
+	private static BufferedImage image = loadImage();
 	
 	private Color defaultC;
 	private Color hoveredC;
@@ -120,9 +116,8 @@ public class DropdownButton extends JPanel implements MouseListener
 		BufferedImage img = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB);
 		try
 		{
-			Print.m(new File(DropdownButton.class.getResource("/assets/triangle.png").toURI()).getAbsolutePath());
 			img = ImageIO.read(DropdownButton.class.getResourceAsStream("/assets/triangle.png"));
-		} catch (IOException | URISyntaxException | NullPointerException e)
+		} catch (IOException | NullPointerException e)
 		{
 			e.printStackTrace();
 			return null;
